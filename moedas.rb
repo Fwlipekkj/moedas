@@ -9,9 +9,8 @@ def demand()
     coins = [1.00, 0.50, 0.25, 0.10, 0.5]
 
     while amount_charged >= coins[0] do
-    remaining_amount - coins[0]
+    remaining_amount -= coins[0]
     end
-    puts remaining_amount
 end
 
 puts demand()
