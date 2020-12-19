@@ -2,17 +2,17 @@
 puts "digite um valor à ser cobrado" # Aqui eu faço o valor que será cobrado
 
 def demand()
-    amount_charged = gets.to_f.round(2)
+    amount_charged = gets.to_f.round(3)
 
-    change_of_purchase = nil.to_f.round(2)
+    change_of_purchase = nil.to_f.round(3)
 
-    remaining_amount = amount_charged.round(2)
+    remaining_amount = amount_charged.to_f.round(3)
 
     coins = [1.00, 0.50, 0.25, 0.10, 0.05]
 
 
     while remaining_amount >= coins[4] do
-        remaining_amount -= coins[4] and change_of_purchase += coins[4]
+        remaining_amount -= coins[4] and change_of_purchase += 0.05
     end
 
     while remaining_amount >= coins[0] do
@@ -32,21 +32,21 @@ def demand()
     end
 
 
-    puts change_of_purchase.round(2)
+    puts change_of_purchase.to_f.round(3)
 
     if remaining_amount == 0.00 or remaining_amount < 0.05
-        puts "Não sobrou nada para pagar! Restante:  " + remaining_amount.round(2).to_s + "R$"
+        puts "Não sobrou nada para pagar! Restante:  " + remaining_amount.round(3).to_s + "R$"
     elsif remaining_amount < 0.00
-        puts "Você pagou a mais! seu troco: " + remaining_amount.round(2).to_s + "R$"
+        puts "Você pagou a mais! seu troco: " + remaining_amount.round(3).to_s + "R$"
     elsif remaining_amount > 0.00 
-        puts "Você está devendo! precisa de mais " + remaining_amount.round(2).to_s + "R$ para pagar!"
+        puts "Você está devendo! precisa de mais " + remaining_amount.round(3).to_s + "R$ para pagar!"
     else
         puts "An error occurred"
     end
 
     sleep(2)
 
-    puts "Você gastou" " #{change_of_purchase.round(2)} " "R$!"
+    puts "Você gastou" " #{change_of_purchase.round(3)} " "R$!"
 
 end
 
